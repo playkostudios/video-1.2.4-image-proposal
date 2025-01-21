@@ -15,6 +15,7 @@
 import {MouseLookComponent} from '@wonderlandengine/components';
 import {WasdControlsComponent} from '@wonderlandengine/components';
 import {AsyncVideoTexture} from './async-video-texture.js';
+import {TargetFramerateQuerystring} from './target-framerate-querystring.js';
 /* wle:auto-imports:end */
 
 import {loadRuntime} from '@wonderlandengine/api';
@@ -81,6 +82,7 @@ if (document.readyState === 'loading') {
 engine.registerComponent(MouseLookComponent);
 engine.registerComponent(WasdControlsComponent);
 engine.registerComponent(AsyncVideoTexture);
+engine.registerComponent(TargetFramerateQuerystring);
 /* wle:auto-register:end */
 
 engine.scene.load(`${Constants.ProjectName}.bin`).catch((e) => {

@@ -8,6 +8,9 @@
                     "wasd-controls": {
                         "headObject": "17"
                     }
+                },
+                {
+                    "type": "target-framerate-querystring"
                 }
             ],
             "scaling": [
