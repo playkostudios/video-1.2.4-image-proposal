@@ -146,7 +146,7 @@ export class AsyncVideoTexture extends Component {
 
     applyTexture() {
         const mat = this.material;
-        const texture = (this.texture = this.engine.textures.create(this.video));
+        const texture = (this.texture = this.engine.textures.create(this.provider));
         mat[this.textureSetter](texture);
 
         if ('requestVideoFrameCallback' in this.video) {
