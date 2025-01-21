@@ -1,5 +1,10 @@
 var instantiateWonderlandRuntime =
     function(instantiateWonderlandRuntime = {}) {
+        let callTotal = 0;
+        let totalTime = 0;
+        window.measureUploadAverage = function () {
+            console.log(`Average texture upload time: ${totalTime / callTotal}ms (${callTotal} calls measured)`);
+        }
 
         var Module = instantiateWonderlandRuntime;
         var readyPromiseResolve, readyPromiseReject;
@@ -366,6 +371,7 @@ var instantiateWonderlandRuntime =
                 return xr && xr.frame && xr.frame.predictedDisplayTime || performance.now() || Date.now()
             },
             915456: ($0, $1, $2, $3, $4) => {
+                performance.mark('tex-upload-start');
                 const originalTex = GLctx.getParameter(GLctx.TEXTURE_BINDING_2D_ARRAY);
                 const img = Module._images[$3];
                 const w = img.videoWidth || img.width;
@@ -375,6 +381,9 @@ var instantiateWonderlandRuntime =
                 GLctx.texSubImage3D(GLctx.TEXTURE_2D_ARRAY, 0, $0, $1, $2, w, h, 1, GLctx.RGBA, GLctx.UNSIGNED_BYTE, Module._imageTypes[$3] === 4 ? img.getData() : img);
                 // GLctx.pixelStorei(GLctx.UNPACK_FLIP_Y_WEBGL, false);
                 GLctx.bindTexture(GLctx.TEXTURE_2D_ARRAY, originalTex)
+                performance.mark('tex-upload-end');
+                callTotal++;
+                totalTime += performance.measure('tex-upload-duration', 'tex-upload-start', 'tex-upload-end').duration;
             },
             915959: ($0, $1) => {
                 const s = UTF8ToString($0, $1);
