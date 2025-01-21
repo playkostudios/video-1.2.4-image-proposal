@@ -163,7 +163,9 @@ export class AsyncVideoTexture extends Component {
     update(dt) {
         if (this.provider && this.frameUpdateRequested) {
             if (this.texture) {
-                this.texture.update();
+                setTimeout(() => {
+                    this.texture.update();
+                }, 0);
             } else {
                 /* Apply texture on first frame update request */
                 this.applyTexture();
