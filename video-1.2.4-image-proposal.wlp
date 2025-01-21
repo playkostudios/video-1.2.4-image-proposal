@@ -41,10 +41,11 @@
                     }
                 },
                 {
-                    "type": "async-video-texture",
-                    "async-video-texture": {
+                    "type": "video-texture",
+                    "video-texture": {
+                        "url": "bbb.webm",
                         "material": "20",
-                        "url": "bbb.webm"
+                        "textureProperty": "diffuseTexture"
                     }
                 }
             ],

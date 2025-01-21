@@ -13,8 +13,8 @@
 
 /* wle:auto-imports:start */
 import {MouseLookComponent} from '@wonderlandengine/components';
+import {VideoTexture} from '@wonderlandengine/components';
 import {WasdControlsComponent} from '@wonderlandengine/components';
-import {AsyncVideoTexture} from './async-video-texture.js';
 import {TargetFramerateQuerystring} from './target-framerate-querystring.js';
 /* wle:auto-imports:end */
 
@@ -80,8 +80,8 @@ if (document.readyState === 'loading') {
 
 /* wle:auto-register:start */
 engine.registerComponent(MouseLookComponent);
+engine.registerComponent(VideoTexture);
 engine.registerComponent(WasdControlsComponent);
-engine.registerComponent(AsyncVideoTexture);
 engine.registerComponent(TargetFramerateQuerystring);
 /* wle:auto-register:end */
 
