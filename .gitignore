@@ -1,0 +1,8 @@
+/cache/
+/deploy/
+/deploy-patched/
+/node_modules/
+/cert.pem
+/key.pem
+/package-lock.json
+/static/

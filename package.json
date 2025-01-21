@@ -1,0 +1,24 @@
+{
+  "name": "video-1.2.4-image-proposal",
+  "version": "1.0.0",
+  "description": "My Wonderland project",
+  "main": "js/index.js",
+  "type": "module",
+  "module": "js/index.js",
+  "scripts": {
+    "serve": "shx rm -rf deploy-patched && shx cp -R deploy deploy-patched && shx cp overrides/* deploy-patched/ && serve deploy-patched --symlinks --ssl-cert cert.pem --ssl-key key.pem -p 8080 -C"
+  },
+  "keywords": [
+    "wonderland-engine"
+  ],
+  "dependencies": {
+    "@wonderlandengine/api": "file:wonderlandengine-api-1.2.4+image-proposal.tgz",
+    "@wonderlandengine/components": "^1.0.7",
+    "gl-matrix": "^3.4.3",
+    "serve": "^14.2.4",
+    "shx": "^0.3.4"
+  },
+  "overrides": {
+    "@wonderlandengine/api@>=1.2.0 < 1.3": "file:wonderlandengine-api-1.2.4+image-proposal.tgz"
+  }
+}
