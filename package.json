@@ -12,13 +12,13 @@
     "wonderland-engine"
   ],
   "dependencies": {
-    "@wonderlandengine/api": "file:wonderlandengine-api-1.2.4+image-proposal.tgz",
+    "@wonderlandengine/api": "file:wonderlandengine-api-1.2.4+image-proposal-patch-2.tgz",
     "@wonderlandengine/components": "^1.0.7",
     "gl-matrix": "^3.4.3",
     "serve": "^14.2.4",
     "shx": "^0.3.4"
   },
   "overrides": {
-    "@wonderlandengine/api@>=1.2.0 < 1.3": "file:wonderlandengine-api-1.2.4+image-proposal.tgz"
+    "@wonderlandengine/api@>=1.2.0 < 1.3": "file:wonderlandengine-api-1.2.4+image-proposal-patch-2.tgz"
   }
 }
