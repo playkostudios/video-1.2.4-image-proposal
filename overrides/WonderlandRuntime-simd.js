@@ -371,9 +371,9 @@ var instantiateWonderlandRuntime =
                 const w = img.videoWidth || img.width;
                 const h = img.videoHeight || img.height;
                 _glBindTexture(GLctx.TEXTURE_2D_ARRAY, $4);
-                GLctx.pixelStorei(GLctx.UNPACK_FLIP_Y_WEBGL, true);
-                GLctx.texSubImage3D(GLctx.TEXTURE_2D_ARRAY, 0, $0, $1, $2, w, h, 1, GLctx.RGBA, GLctx.UNSIGNED_BYTE, Module._imageTypes[$3] === 4 ? img.getData() : img);
-                GLctx.pixelStorei(GLctx.UNPACK_FLIP_Y_WEBGL, false);
+                // GLctx.pixelStorei(GLctx.UNPACK_FLIP_Y_WEBGL, true);
+                GLctx.texSubImage3D(GLctx.TEXTURE_2D_ARRAY, 0, $0, $1, $2, w, h, 1, GLctx.RGBA8, GLctx.UNSIGNED_BYTE, Module._imageTypes[$3] === 4 ? img.getData() : img);
+                // GLctx.pixelStorei(GLctx.UNPACK_FLIP_Y_WEBGL, false);
                 GLctx.bindTexture(GLctx.TEXTURE_2D_ARRAY, originalTex)
             },
             915959: ($0, $1) => {
